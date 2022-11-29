@@ -33,3 +33,4 @@ python -m links_checker get https://google.com https://github.com
 ## Autor
 
 Tsyos Max ([BadBedBatPenguin](https://github.com/BadBedBatPenguin))
+(time taken to make this app is about 6-8 hours)
