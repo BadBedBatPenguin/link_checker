@@ -1,8 +1,7 @@
 import re
 from typing import List
-import typer
-from requests import get, post, put, patch, delete, options, head
 
+from requests import delete, get, head, options, patch, post, put
 
 INVALID_STATUS_CODES = (405,)
 METHODS = [
@@ -16,7 +15,7 @@ METHODS = [
 ]
 
 
-def links_checker(string_set:List[str])->dict:
+def links_checker(string_set: List[str]) -> dict:
     '''returns response code for links in given string set'''
     # string_set = links.split(', ')
     result_dict = {}
@@ -24,7 +23,7 @@ def links_checker(string_set:List[str])->dict:
         if not re.match((
                 '^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.'
                 '[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$'
-            ), string):
+        ), string):
             print(f'Строка "{string}" не является ссылкой.')
         else:
             codes = {}
